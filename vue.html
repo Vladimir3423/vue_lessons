@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  
+ 
+ 
+    <div id="app">
+       
+     <span @mouseover="changText">Текст</span> 
+     <p> {{ title }}</p>
+     <p v-bind:class="titleS ">Цвет {{ titleS }}</p>
+     <input type="text" v-on:input="titleS = $event.target.value"><br>
+     <input type="text" v-on:input="increment ($event.target.value)">
+     <p>{{ value }}</p>
+     <p>{{ Dvalue }}</p>
+     <button v-on:click="show = !show">скрыть/показать</button>
+     <p v-if="show">Это Текст невидимка </p>
+     <p v-else>Это Текст  </p>
+
+     <ul>
+      <li v-for="(car, t) in cars">{{t + 1}}{{ car.model}} скорость:{{ car.speed}}</li>
+     </ul>
+
+     <app-car></app-car>
+     <app-car></app-car>
+     <app-car></app-car>
+
+    </div>
+
+    <div id="app2">
+      <hr>
+      <app-car></app-car>
+    </div>
+
+    
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
